@@ -44,7 +44,10 @@ final class scanner_test extends \advanced_testcase {
      * @param string $contenttype main content type
      * @return string path
      */
-    private function ooxml(array $entries = [], string $contenttype = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml'): string {
+    private function ooxml(
+        array $entries = [],
+        string $contenttype = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml'
+    ): string {
         $path = make_request_directory() . '/doc.zip';
         $zip = new \ZipArchive();
         $zip->open($path, \ZipArchive::CREATE);
